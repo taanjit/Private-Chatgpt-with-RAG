@@ -1,0 +1,67 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Documentation
+README.md
+*.md
+docs/
+
+# Data files
+*.pdf
+data/
+uploads/
+
+# Model caches
+models/
+.cache/
+
+# Logs
+*.log
+logs/
+
+# Tests
+tests/
+test_*.py
+*_test.py
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Scripts
+run.sh
+*.sh
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# Other
+.env*
+.streamlit/
+
