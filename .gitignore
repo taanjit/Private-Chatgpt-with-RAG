@@ -87,3 +87,8 @@ htmlcov/
 
 # Ollama (if storing locally)
 ollama_data/
+
+# Docker exports (large files)
+*.tar
+*.tar.gz
+docker-package/

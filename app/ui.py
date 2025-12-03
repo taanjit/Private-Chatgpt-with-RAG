@@ -2,6 +2,10 @@ import sys
 import os
 from pathlib import Path
 
+# Disable TensorFlow to avoid Keras 3 compatibility issues (must be set before imports)
+os.environ["USE_TF"] = "0"
+os.environ["USE_TORCH"] = "1"
+
 # Add project root to Python path
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
@@ -86,7 +90,7 @@ def sidebar_settings():
         st.rerun()
 
 def render_chat():
-    st.title("🛡️ Private GPT (Local LLaMA + Ollama)")
+    st.title("🛡️ Private GPT (Local Deepseek-r1 + Ollama)")
     
     # Clear chat button
     col1, col2 = st.columns([6, 1])

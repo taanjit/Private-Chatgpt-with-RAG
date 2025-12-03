@@ -1,6 +1,7 @@
 streamlit
 requests
 python-dotenv
+torch
 sentence-transformers
 faiss-cpu
 pypdf

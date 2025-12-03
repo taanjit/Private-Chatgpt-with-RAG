@@ -1,13 +1,21 @@
 from typing import List, Tuple
 import os
+
+# Disable TensorFlow to avoid Keras 3 compatibility issues
+os.environ["USE_TF"] = "0"
+os.environ["USE_TORCH"] = "1"
+
 import faiss
 import numpy as np
+import torch
 from sentence_transformers import SentenceTransformer
 from pypdf import PdfReader
 
 class SimpleLocalRAG:
     def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
-        self.embedder = SentenceTransformer(model_name)
+        # Explicitly set device to avoid meta tensor issues
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.embedder = SentenceTransformer(model_name, device=device)
         self.index = None
         self.chunks: List[str] = []
 
